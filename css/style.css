@@ -1,0 +1,184 @@
+/* ============================================
+   출결 관리 달력 - Custom Styles
+   (Tailwind handles most styling)
+   ============================================ */
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, .font-headline {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+/* Day Cell */
+.day-cell {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 4px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.15s ease;
+    user-select: none;
+}
+
+.day-cell:active {
+    transform: scale(0.93);
+}
+
+.day-cell--empty {
+    cursor: default;
+}
+
+.day-cell--empty:active {
+    transform: none;
+}
+
+.day-cell--today {
+    border: 2px solid #006c53;
+}
+
+.day-cell--today .day-number {
+    font-weight: 800;
+    color: #006c53;
+}
+
+.day-cell--saturday .day-number {
+    color: #1d648f;
+}
+
+.day-cell--sunday .day-number {
+    color: #a83836;
+}
+
+.day-cell--other-month {
+    opacity: 0.2;
+}
+
+.day-cell--has-records {
+    background-color: #eaefee;
+}
+
+/* Day cell dots */
+.day-dots {
+    display: flex;
+    gap: 2px;
+    margin-top: auto;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.day-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Active nav button style */
+.nav-btn--active {
+    background-color: #93f5d1;
+    color: #006c53;
+    opacity: 1 !important;
+}
+
+.nav-btn--active .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slideUp {
+    animation: slideUp 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.2s ease;
+}
+
+/* Toast animations */
+.toast-show {
+    animation: toastIn 0.3s ease forwards;
+}
+
+.toast-hide {
+    animation: toastOut 0.3s ease forwards;
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes toastOut {
+    from {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+/* Scrollbar hide utility */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Student tag remove animation */
+.student-tag-exit {
+    animation: tagExit 0.2s ease forwards;
+}
+
+@keyframes tagExit {
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
