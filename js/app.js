@@ -470,13 +470,12 @@ function saveRecordForm() {
     const studentName = document.getElementById('record-student').value.trim();
     const type = document.getElementById('record-type').value;
     const startDate = document.getElementById('record-start-date').value;
-    const endDate = document.getElementById('record-end-date').value;
+    const endDate = document.getElementById('record-end-date').value || startDate;
     const memo = document.getElementById('record-memo').value.trim();
 
     if (!studentName) { showToast('학생 이름을 입력하세요', 'error'); return; }
     if (!type) { showToast('출결 유형을 선택하세요', 'error'); return; }
     if (!startDate) { showToast('시작일을 선택하세요', 'error'); return; }
-    if (!endDate) { showToast('종료일을 선택하세요', 'error'); return; }
     if (endDate < startDate) { showToast('종료일은 시작일 이후여야 합니다', 'error'); return; }
 
     if (state.editingRecordId) {
