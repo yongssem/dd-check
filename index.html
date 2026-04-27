@@ -280,6 +280,22 @@
                 </div>
             </section>
 
+            <!-- Document Settings -->
+            <div class="space-y-3 mb-8">
+                <h3 class="text-xs font-bold text-on-surface-variant uppercase tracking-widest px-1">서류 설정</h3>
+                <div class="bg-surface-container-low rounded-lg overflow-hidden">
+                    <div class="p-5 bg-surface-container-lowest">
+                        <label class="block text-sm font-semibold text-on-surface mb-1">교외체험학습 신청서 마감</label>
+                        <p class="text-[11px] text-on-surface-variant mb-3">시작일로부터 며칠 전까지 제출해야 하는지 설정합니다.</p>
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm text-on-surface-variant">시작일</span>
+                            <input type="number" id="input-apply-days" min="0" max="30" class="w-20 h-12 px-3 bg-surface-container-highest border-none rounded-[0.5rem] focus:ring-2 focus:ring-primary/20 text-on-surface font-bold text-center">
+                            <span class="text-sm text-on-surface-variant">일 전까지</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Student Management -->
             <div class="space-y-6 mb-8">
                 <div class="space-y-3">
@@ -447,6 +463,12 @@
                         <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant ml-1">종료일</label>
                         <input type="date" id="record-end-date" class="w-full h-14 px-5 bg-surface-container-highest border-none rounded-[0.5rem] focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all text-on-surface font-medium">
                     </div>
+                </div>
+
+                <!-- Documents -->
+                <div id="record-docs-section" class="space-y-2 hidden">
+                    <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant ml-1">제출 서류</label>
+                    <div id="record-docs-list" class="bg-surface-container-highest rounded-[0.5rem] p-3 space-y-1"></div>
                 </div>
 
                 <!-- Memo -->
