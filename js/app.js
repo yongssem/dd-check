@@ -328,6 +328,7 @@ function confirmAction(title, message, fn, accept = "계속하기") {
 function switchView(view) {
   state.view = view;
   render();
+  window.scrollTo(0, 0);
   document.querySelector("#main-content").focus({ preventScroll: true });
 }
 function render() {
