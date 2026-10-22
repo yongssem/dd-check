@@ -1,0 +1,11 @@
+{
+  "name": "dd-check",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test tests/core.test.mjs",
+    "check": "node --check js/core.mjs && node --check js/app.js"
+  }
+}
