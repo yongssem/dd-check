@@ -383,7 +383,13 @@ function render() {
   else if (state.view === "statistics") renderStatistics(main);
   else if (state.view === "students") renderStudents(main);
   else renderSettings(main);
-  add(shell, header, nav, main);
+  const footer = el("footer", "app-footer");
+  const brandLink = el("a", "", "무궁무진클래스");
+  brandLink.href = "https://mumuclass.kr";
+  brandLink.target = "_blank";
+  brandLink.rel = "noreferrer noopener";
+  add(footer, "© 2026 ", brandLink, " · 바이브용샘");
+  add(shell, header, nav, main, footer);
   add(root, shell);
 }
 function renderCalendar(main) {
