@@ -434,6 +434,7 @@ function renderCalendar(main) {
   add(main, summary);
   const workspace = el("div", "workspace");
   const cal = panel();
+  cal.classList.add("calendar-panel");
   const heading = el("div", "calendar-head");
   add(
     heading,
@@ -546,6 +547,7 @@ function renderCalendar(main) {
     ),
   );
   const detail = panel();
+  detail.classList.add("date-panel");
   const records = data.records.filter(
     (r) => r.startDate <= state.date && r.endDate >= state.date,
   );

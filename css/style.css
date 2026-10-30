@@ -1161,3 +1161,55 @@ td { border-bottom-color: #c8c0ae; }
   .calendar-head { align-items: flex-start; flex-wrap: wrap; }
   .month-nav { margin-left: auto; }
 }
+
+/* Desktop overview: keep the month and selected day's records in view. */
+@media (min-width: 1100px) {
+  .shell { position: relative; width: min(1600px, 100%); padding-inline: 28px 35px; }
+  .app-header { min-height: 88px; padding: 16px 0; }
+  .brand { gap: 12px; }
+  .brand-mark { width: 44px; height: 44px; font-size: 25px; border-radius: 13px; }
+  .brand h1 { font-size: 26px; }
+  .brand .eyebrow { margin-top: 3px; font-size: 12px; }
+  .nav {
+    position: absolute; top: 22px; left: 50%; transform: translateX(-50%);
+    gap: 8px; padding: 0; margin: 0; border: 0;
+  }
+  .nav button { min-width: 80px; padding: 8px 12px; font-size: 14px; }
+  .summary-grid { gap: 18px; margin-bottom: 16px; }
+  .summary { padding: 10px 18px; }
+  .summary strong { font-size: 28px; }
+  .summary .eyebrow { margin-bottom: 0; }
+  .summary .subtle { min-height: 30px; padding-block: 2px; }
+  .workspace { grid-template-columns: minmax(0, 1.5fr) minmax(380px, 1fr); gap: 22px; }
+  .calendar-panel, .date-panel { padding: 16px; border-radius: 18px; }
+  .calendar-head, .date-panel .panel-head { margin-bottom: 12px; }
+  .calendar-head h2, .date-panel h2 { font-size: 21px; }
+  .calendar-head .eyebrow, .date-panel .eyebrow { font-size: 12px; }
+  .weekday { margin-bottom: 6px; }
+  .day-cell, .day-empty {
+    min-height: 0; height: clamp(54px, calc((100dvh - 410px) / 6), 110px);
+  }
+  .day-cell { position: relative; padding: 5px; gap: 2px; }
+  .day-cell[aria-pressed="true"] { padding: 4px; }
+  .day-number { width: 23px; height: 23px; flex-shrink: 0; }
+  .day-chip { flex-shrink: 0; font-size: 11px; line-height: 16px; }
+  .day-count { position: absolute; top: 8px; right: 5px; font-size: 11px; line-height: 16px; }
+  .calendar-foot { margin-top: 10px; padding-top: 8px; font-size: 12px; }
+  .date-panel { max-height: calc(100dvh - 190px); display: flex; flex-direction: column; }
+  .date-panel > .panel-head, .date-panel > .period-caption { flex-shrink: 0; }
+  .date-panel > .period-caption { margin: 0 0 12px; font-size: 13px; }
+  .date-panel > .record-list { overflow-y: auto; min-height: 0; padding: 0 5px 5px 0; scrollbar-gutter: stable; }
+  .date-panel .record-card { padding: 12px; }
+  .date-panel .record-list { gap: 12px; }
+  .date-panel .record-actions { margin-top: 8px; padding-top: 5px; }
+  .date-panel .empty { padding: 28px 16px; }
+  .section-gap { margin-top: 18px; }
+  .app-footer { margin-top: 20px; padding-top: 16px; }
+  .metric-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .metric { padding: 12px; }
+}
+
+@media (min-width: 1100px) and (max-height: 850px) {
+  /* The total stays visible; selecting a day reveals every record at right. */
+  .calendar-panel .day-chip:nth-of-type(3) { display: none; }
+}
