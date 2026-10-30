@@ -384,11 +384,11 @@ function render() {
   else if (state.view === "students") renderStudents(main);
   else renderSettings(main);
   const footer = el("footer", "app-footer");
-  const brandLink = el("a", "", "무궁무진클래스");
+  const brandLink = el("a", "", "무궁무진 클래스 바이브용샘");
   brandLink.href = "https://mumuclass.kr";
   brandLink.target = "_blank";
   brandLink.rel = "noreferrer noopener";
-  add(footer, "© 2026 ", brandLink, " · 바이브용샘");
+  add(footer, brandLink);
   add(shell, header, nav, main, footer);
   add(root, shell);
 }

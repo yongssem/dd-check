@@ -1062,7 +1062,8 @@ input:not([type=checkbox]):not([type=radio]), select, textarea {
 h1, h2, h3, .summary strong, .metric b { font-weight: 800; }
 h1 { font-size: 34px; line-height: 1.2; }
 h2 { font-size: 23px; }
-.shell { padding-bottom: 28px; }
+.shell { padding-bottom: 28px; min-height: 100dvh; display: flex; flex-direction: column; }
+.shell > main { flex: 1; }
 .app-header { padding: 36px 0 26px; }
 .brand { gap: 17px; }
 .brand-mark {
@@ -1119,7 +1120,7 @@ td { border-bottom-color: #c8c0ae; }
 .restore-counts div { border: 1.5px solid var(--ink); border-radius: 13px; }
 .app-footer {
   margin-top: 36px; padding: 24px 0 8px;
-  border-top: 2px solid var(--ink); text-align: center;
+  border-top: 2px solid var(--ink); text-align: right;
   color: var(--muted); font-size: 13px; font-weight: 700;
 }
 .app-footer a { color: inherit; text-underline-offset: 3px; }
