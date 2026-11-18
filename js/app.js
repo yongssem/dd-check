@@ -388,7 +388,11 @@ function render() {
   brandLink.href = "https://mumuclass.kr";
   brandLink.target = "_blank";
   brandLink.rel = "noreferrer noopener";
-  add(footer, brandLink);
+  const privacyLink = el("a", "", "개인정보처리방침·아동보호 안내");
+  privacyLink.href = "/privacy.html";
+  privacyLink.target = "_blank";
+  privacyLink.rel = "noreferrer noopener";
+  add(footer, brandLink, " · ", privacyLink);
   add(shell, header, nav, main, footer);
   add(root, shell);
 }

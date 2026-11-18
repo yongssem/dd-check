@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "test": "node --test tests/core.test.mjs",
-    "check": "node --check js/core.mjs && node --check js/app.js"
+    "check": "node --check js/core.mjs && node --check js/app.js",
+    "test:privacy-page": "node --test --test-timeout=25000 tests/privacy-page.e2e.mjs"
   }
 }
